@@ -1,12 +1,12 @@
 {
     "name": "cloudcms-presentation-server",
-    "description": "Node.js Presentation Server for Cloud CMS",    
+    "description": "Node.js Presentation Server for Cloud CMS",
     "version": "1.0.1",
     "scripts": {
         "start": "node app"
     },
     "dependencies": {
-        "cloudcms-server": "0.8.152"
+        "cloudcms-server": "0.8.225"
     },
     "author": {
       "name": "Gitana Software, Inc.",
@@ -37,5 +37,5 @@
         "caching",
         "cdn",
         "amazon"
-    ]        
+    ]
 }
