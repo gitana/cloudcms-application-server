@@ -20,13 +20,13 @@ RUN echo "root hard nofile 64000" >> /etc/security/limits.conf
 
 
 #
-# Install Node.js
+# Install Node.js 5.6.0
 #
 
 RUN mkdir -p /opt/node
-RUN wget -N http://nodejs.org/dist/v<%=node_version%>/node-v<%=node_version%>-linux-x64.tar.gz -O ~/node-v<%=node_version%>-linux-x64.tar.gz
-RUN tar xvf ~/node-v<%=node_version%>-linux-x64.tar.gz -C /opt/node --strip-components=1
-RUN rm -r ~/node-v<%=node_version%>-linux-x64.tar.gz
+RUN wget -N http://nodejs.org/dist/v5.6.0/node-v5.6.0-linux-x64.tar.gz -O ~/node-v5.6.0-linux-x64.tar.gz
+RUN tar xvf ~/node-v5.6.0-linux-x64.tar.gz -C /opt/node --strip-components=1
+RUN rm -r ~/node-v5.6.0-linux-x64.tar.gz
 ENV PATH $PATH:/opt/node/bin
 ENV PORT 80
 RUN ln -s /opt/node/bin/node /usr/bin/node
@@ -41,6 +41,7 @@ EXPOSE 80
 RUN mkdir -p /var/app/current
 WORKDIR /var/app/current
 COPY app.js /var/app/current
+COPY package.json /var/app/current
 RUN npm install --production
 
 
