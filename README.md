@@ -55,7 +55,7 @@ restart your Docker container.
     docker build -t myappserver .
     docker run -t -i -p 80:80 -v $(pwd)/src/public:/var/app/current/public myappserver
     
-
+See the "run.sh" file for an example of this all running together.
 
 ## Documentation
 

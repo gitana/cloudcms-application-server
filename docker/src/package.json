@@ -6,7 +6,6 @@
         "start": "node app"
     },
     "dependencies": {
-        "cloudcms-server": "0.8.227",
-        "async": "1.5.2"
+        "cloudcms-server": "*"
     }
 }
