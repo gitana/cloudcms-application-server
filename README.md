@@ -32,7 +32,10 @@ app by going to:
 
     http://<dockerMachineIpAddress>
 
-Where <dockerMachineIpAddress> is the IP address or domain name of your Docker Machine.
+Where <dockerMachineIpAddress> is the IP address or domain name of your Docker instance.  If you're using Docker
+Machine, then you can find this by running:
+
+    docker-machine ip
 
 
 ### Developing against Docker
@@ -44,17 +47,14 @@ your Docker container right away.  There are two good approaches:
 
     docker run -t -i -p 80:80 -v $(pwd)/src/public:/var/app/current/public myappserver
     
-2.  Mount the src directory so that your Node code runs in Docker.
+This approach lets you make live changes to the public directory and see them show up right away.  There is no need to
+restart your Docker container.
 
-    docker run -t -i -p 80:80 -v $(pwd)/src:/var/app/current myappserver
+2.  If you make changes to any server-side JS, rebuild your image and redeploy the container, like this:
 
-In the latter case, make sure that you also run '''npm install''' to build out your node_modules.
-
-You can then open a web browser to:
-
-    http://<dockerMachineIpAddress>
-        
-as before.
+    docker build -t myappserver .
+    docker run -t -i -p 80:80 -v $(pwd)/src/public:/var/app/current/public myappserver
+    
 
 
 ## Documentation
