@@ -43,13 +43,4 @@ server.report(function(callback) {
 });
 
 // start the server
-server.start({
-    "setup": "single",
-    "virtualHost": {
-        "enabled": false
-    },
-    "wcm": {
-        "enabled": false,
-        "cache": false
-    }
-});
+server.start();
