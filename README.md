@@ -25,20 +25,39 @@ You can build the image like this:
     
 And then launch it like this:
 
-    docker run -t -p 80:8080 myappserver
-
-As an example of how you might use this in the real world, you do something like this:
+    docker run -t -p 80:80 myappserver
     
-    docker run -t -i -p 8080:80 -v $(pwd)/public:/var/app/current/public myappserver
+This maps the Docker container's port 80 to 80 on your running Docker Machine.  You can then access the running
+app by going to:
 
-This will expose your Node app on port 8080 and will mount the public directory.  You can then open a web browser to:
+    http://<dockerMachineIpAddress>
 
-    http://<dockerHost>:8080
+Where <dockerMachineIpAddress> is the IP address or domain name of your Docker Machine.
+
+
+### Developing against Docker
+
+In terms of development, it's often beneficial to make changes within a local IDE and see those changes show up in
+your Docker container right away.  There are two good approaches:
+
+1.  Mount the public directory so that HTML, CSS and JS changes are picked up.
+
+    docker run -t -i -p 80:80 -v $(pwd)/src/public:/var/app/current/public myappserver
+    
+2.  Mount the src directory so that your Node code runs in Docker.
+
+    docker run -t -i -p 80:80 -v $(pwd)/src:/var/app/current myappserver
+
+In the latter case, make sure that you also run '''npm install''' to build out your node_modules.
+
+You can then open a web browser to:
+
+    http://<dockerMachineIpAddress>
         
-Where <dockerHost> is the domain name or IP address of your docker machine.
+as before.
 
 
 ## Documentation
 
 For more information see:
-    [http://www.cloudcms.com/documentation/application-server.html](http://www.cloudcms.com/documentation/application-server.html)
+    [https://www.cloudcms.com/documentation/application-server.html](https://www.cloudcms.com/documentation/application-server.html)

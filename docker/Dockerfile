@@ -40,8 +40,9 @@ EXPOSE 80
 
 RUN mkdir -p /var/app/current
 WORKDIR /var/app/current
-COPY app.js /var/app/current
-COPY package.json /var/app/current
+COPY src/app.js /var/app/current
+COPY src/package.json /var/app/current
+COPY src/public/ /var/app/current/
 RUN npm install --production
 
 
