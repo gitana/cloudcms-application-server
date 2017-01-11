@@ -9,7 +9,7 @@ server.after(function(app, callback) {
 server.report(function(callback) {
 
     console.log("");
-    console.log("Cloud CMS Presentation Server started! (v" + process.env.CLOUDCMS_APPSERVER_PACKAGE_VERSION + ")");
+    console.log("Cloud CMS Application Server started! (v" + process.env.CLOUDCMS_APPSERVER_PACKAGE_VERSION + ")");
     console.log("");
 
     var cpuCount = require('os').cpus().length;
@@ -47,6 +47,11 @@ var config = {
     "wcm": {
         "enabled": true,
         "cache": false
+    },
+    "duster": {
+        "fragments": {
+            "cache": true
+        }
     }
 };
 
