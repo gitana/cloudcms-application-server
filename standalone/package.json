@@ -1,12 +1,12 @@
 {
-    "name": "cloudcms-presentation-server",
-    "description": "Node.js Presentation Server for Cloud CMS",
-    "version": "1.0.1",
+    "name": "cloudcms-application-server",
+    "description": "Cloud CMS Application Server",
+    "version": "1.0.2",
     "scripts": {
         "start": "node app"
     },
     "dependencies": {
-        "cloudcms-server": "0.8.225"
+        "cloudcms-server": "0.8.382"
     },
     "author": {
       "name": "Gitana Software, Inc.",
@@ -15,7 +15,7 @@
     },
     "repository": {
       "type": "git",
-      "url": "git://github.com/gitana/cloudcms-presentation-server.git"
+      "url": "git://github.com/gitana/cloudcms-application-server.git"
     },
     "contributors": [
       {
