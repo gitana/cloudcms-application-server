@@ -6,7 +6,7 @@
         "start": "node app"
     },
     "dependencies": {
-        "cloudcms-server": "0.8.382"
+        "cloudcms-server": "*"
     },
     "author": {
       "name": "Gitana Software, Inc.",
